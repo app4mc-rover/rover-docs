@@ -99,6 +99,8 @@ If connected, driving buttons can be used to send telemetry data to rover. This 
 		"speed":<int speed>
    }
    
+``"speed"`` entry is an integer value between 360 (lowest speed) and 480 (highest speed) for the rover.
+
 ``"command"`` entry indicates many integrated functions, such as the ones listed below:
 
 * F → Stop Movement
