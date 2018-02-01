@@ -1,9 +1,9 @@
 # This is for building automatically using a Travis docker, and then deploying to Github Pages
 
 # Use old image with super user access
-sudo: required
-dist: trusty
-group: deprecated-2017Q4
+#sudo: required
+#dist: trusty
+#group: deprecated-2017Q4
 
 language: python
 
