@@ -79,9 +79,6 @@ Upon connection, rover-telemetry-ui subscribes to topics ``rover/<roverID>/Rover
 			"rearleft":100.0,
 			"rearright":100.0
 		},
-		"qmc5883l":{
-			"bearing":0.0
-		},
 		"ultrasonic":{
 			"front":0.0,
 			"rear":0.0
