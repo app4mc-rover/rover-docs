@@ -48,10 +48,6 @@ Upon connection, rover-telemetry-ui subscribes to topics ``rover/<roverID>/Rover
    :linenos:
    
 	{
-		"dht22":{
-			"humidity":0.0,
-			"temperature":0.0
-		},
 		"gy521":{
 			"accel":{
 				"x":-1,
