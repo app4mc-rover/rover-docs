@@ -47,7 +47,6 @@ Upon connection, rover-telemetry-ui subscribes to topic ``telemetry``.
 				"y":-35.264389038085938,
 				"z":-54.735610961914062
 			},
-			"bearing":47.366317749023438,
 			"gyro":{
 				"x":-1,
 				"y":-1,
