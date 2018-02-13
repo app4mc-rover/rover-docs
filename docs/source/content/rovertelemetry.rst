@@ -66,11 +66,11 @@ Upon connection, rover-telemetry-ui subscribes to topic ``telemetry``.
 			"front":0.0,
 			"rear":0.0
 		},
-    "cores":{
-      "core0":55.099998474121094,
-      "core1":100.0,
-      "core2":100.0,
-      "core3":18.899999618530273
+		"cores":{
+			"core0":55.099998474121094,
+			"core1":100.0,
+			"core2":100.0,
+			"core3":18.899999618530273
 		}
 	}
 
