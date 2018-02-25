@@ -23,7 +23,7 @@ Rover Telemery UI is shown below:
 
 Operation
 ^^^^^^^^^^^^^
-Upon connection, rover-telemetry-ui subscribes to topic ``telemetry``.
+Upon connection, rover-telemetry-ui subscribes to topic ``rover/<roverID>/telemetry``, which is redirected from ``telemetry`` topic on the Eclipse Hono side.
 
 .. image:: ../roverstatic/images/cloudinfra1.png
    :width: 100%
