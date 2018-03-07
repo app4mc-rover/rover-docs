@@ -158,6 +158,8 @@ In the telemetry UI, you have to enter broker address starting with ``tcp://``, 
 If you configured credentials, you can also enter them. Default is without any credentials. After specifying the rover ID as it is in the rover.conf, hit Connect.
 
 
+If you would like to also test rover-web, simply go to ``http://<rover-ip-address>:5500/roverweb.html`` from your local machine.
+
 Killing Roverapp
 ==============================================================
 
