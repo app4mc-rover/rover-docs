@@ -16,7 +16,7 @@ Configuration Steps (One Time Only per Rover)
 
 To demonstrate the rover, you'll need Rover Telemetry UI.
 
-First install node.js by following `http://nodesource.com/blog/installing-node-js-tutorial-ubuntu/ <http://nodesource.com/blog/installing-node-js-tutorial-ubuntu/>`_ for Ubuntu 16.04.
+First install node.js with the help of `http://nodesource.com/blog/installing-node-js-tutorial-ubuntu/ <http://nodesource.com/blog/installing-node-js-tutorial-ubuntu/>`_ for Ubuntu 16.04.
 
 On your local machine, to download Rover Telemetry UI:
 
@@ -32,9 +32,6 @@ On your local machine, to download dependencies (If you don't have node.js insta
    
    cd rover-telemetry-ui
    sudo npm install net connect serve-static http socket.io express path mqtt
-
-
-	   
 
 
 Running Steps
@@ -53,6 +50,7 @@ Now, configure rover.conf on your local machine and copy it to the rover:
 
 	.. code-block:: bash
 	   :linenos:
+
 	   cd ~
 	   wget 'https://raw.githubusercontent.com/app4mc-rover/rover-app/0.1.1/samples/rover.conf.sample'
 	   mv rover.conf.sample rover.conf
@@ -124,7 +122,14 @@ Once SSHed, kill the existing roverapp:
 	.. code-block:: bash
 	   :linenos:
 	   
-	   killall roverapp
+	   ps -aux | grep roverapp
+
+Look for the PID value in the first column and in the row where /usr/sbin/roverapp executable is located, then replace this with <PID> below:
+
+	.. code-block:: bash
+	   :linenos:
+	   
+	   kill -9 <PID>
 
 Start the new roverapp (this is only for running pre-built executable), type:
 
@@ -133,8 +138,24 @@ Start the new roverapp (this is only for running pre-built executable), type:
 	   
 	   /home/mozcelikors/qtCreatorWorkspace/roverapp/build/bin/roverapp
 
+
+.. note:: 
+
+	If you dont have a pre-built executable, you can download the build directory from `this link <https://owncloud.idial.institute/s/wodPfDmgtRv47Gk>`_.
+	After downloading, this executable should be copied exactly at ``/home/mozcelikors/qtCreatorWorkspace/roverapp/build/`` in AGL image.
+	This is a workaround for those who would like to only test with the rover and not develop on it.
+
+	To do this, unzip the file to a directory named ``build``. SSH to rover and copy its contents to rover using: 
+
+	.. code-block:: bash
+	   :linenos:
+	   
+	   rsync -r build/* root@<rover-ip-address>:/home/mozcelikors/qtCreatorWorkspace/roverapp/build/
    
 Go to your web browser and find the Rover Telemetry UI at ``http://<your host address>:5055/rovertelemetryui.html``.
+
+In the telemetry UI, you have to enter broker address starting with ``tcp://``, If you are using a local mosquitto server this would be ``tcp://<your-ip-address>``.
+If you configured credentials, you can also enter them. Default is without any credentials. After specifying the rover ID as it is in the rover.conf, hit Connect.
 
 
 Killing Roverapp
