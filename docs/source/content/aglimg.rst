@@ -160,6 +160,41 @@ If you configured credentials, you can also enter them. Default is without any c
 
 If you would like to also test rover-web, simply go to ``http://<rover-ip-address>:5500/roverweb.html`` from your local machine.
 
+
+(Optional) Connecting to a Wifi on AGL
+==============================================================
+
+Until this point, we had the assumption that you SSHed into rover using an ethernet cable. If you want to avoid that and want to able to connect to rover with wifi you'll have to use ``connmanctl``.
+
+Now, by using your ethernet cable, SSH into the rover like you normally would and type the following:
+
+	.. code-block:: bash
+	   :linenos:
+	   
+	   connmanctl
+	   agent on
+	   services
+
+You should now be able to see the available wifi networks around rover. Copy the psk key of the network you want to connect to (i.e. ``wifi_b827eb861868_6f322d574c414e3837_managed_psk``). Then, type the following by replacing <copied-psk-key> with the copied value:
+
+	.. code-block:: bash
+	   :linenos:
+	   
+	   connect <copied-psk-key>
+
+You'll be asked a Passphrase. Enter it and wait for a message. If properly connected, you'll be notified that you're now connected. Then type:
+
+	.. code-block:: bash
+	   :linenos:
+	   
+	   quit
+
+If you weren't able to connect, Repeat this section one more time.
+
+Now, exit the SSH session and plug off the ethernet cable.
+Obtain the new IP address of your rover and you can use this new IP address from now on for SSHing and controlling the rover.
+
+
 Killing Roverapp
 ==============================================================
 
