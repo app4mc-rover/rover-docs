@@ -17,6 +17,11 @@ What is rover or APP4MC-rover?
 Rover features applications and tooling required to address complex research fields such as cloud communication, open-source tooling, multi-core and cluster computing.
 Rover is equipped with powerful sensors, motors, and display units to interact with the physical world. Furthermore, Rover uses `Eclipse PolarSys project <http://polarsys.org/polarsys-rover-user-story-application-platform-project-multicore-app4mc>`_ for its chassis and mechanics.
 
+.. image:: ../roverstatic/images/rover11_2017.png
+   :width: 70%
+   :align: center
+   :alt: ../roverstatic/images/rover11_2017.png
+
 .. raw:: html
 
    <iframe width="700" height="500" src="https://www.youtube.com/embed/-YKgCpiWNCw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
