@@ -64,7 +64,7 @@ Now, configure rover.conf on your local machine and copy it to the rover:
 	   HONO_HTTP_USERNAME_C=sensor1
 	   HONO_HTTP_PASSWORD_C=hono-secret
 
-The configuration file should look like the one above. You should configure ``MQTT_BROKER_C`` with the exact hostname of the MQTT broker that you will use. If you don't have one, you can install one to your local machine by using the following:
+The configuration file should look like the one above. It is space sensitive so be sure not to introduce any unnecessary whitespaces or blank characters to the format. You should configure ``MQTT_BROKER_C`` with the exact hostname of the MQTT broker that you will use. If you don't have one, you can install one to your local machine by using the following:
 
 	.. code-block:: bash
 	   :linenos:
