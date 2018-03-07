@@ -145,7 +145,7 @@ Start the new roverapp (this is only for running pre-built executable), type:
 	After downloading, this executable should be copied exactly at ``/home/mozcelikors/qtCreatorWorkspace/roverapp/build/`` in AGL image.
 	This is a workaround for those who would like to only test with the rover and not develop on it.
 
-	To do this, unzip the file to a directory named ``build``. SSH to rover and copy its contents to rover using: 
+	To do this, unzip the file to a directory named ``build``. On your local machine, copy its contents to rover using: 
 
 	.. code-block:: bash
 	   :linenos:
