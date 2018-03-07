@@ -33,15 +33,6 @@ On your local machine, to download dependencies (If you don't have node.js insta
    cd rover-telemetry-ui
    sudo npm install net connect serve-static http socket.io express path mqtt
 
-On your local machine, to run the server:
-
-.. code-block:: javascript
-   :linenos:   
-   
-   cd scripts/
-   sudo node start_rovertelemetryui.js
-   
-Finally, go to your web browser and find the page at ``http://<your host address>:5055/rovertelemetryui.html``.
 
 Now, configure rover.conf on your local machine and copy it to the rover:
 
@@ -137,6 +128,17 @@ Start the new roverapp, type:
 	   :linenos:
 	   
 	   /projects/rover-app/build/bin/roverapp
+
+On your local machine, to run the Rover Telemetry UI server:
+
+.. code-block:: javascript
+   :linenos:   
+   
+	   cd scripts/
+	   sudo node start_rovertelemetryui.js
+   
+Go to your web browser and find the page at ``http://<your host address>:5055/rovertelemetryui.html``.
+
 
 Killing Roverapp
 ==============================================================
