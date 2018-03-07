@@ -22,6 +22,7 @@ APP4MC-Rover Documentation
    content/cross.rst
    content/yocto.rst
    content/images.rst
+   content/aglimg.rst
    content/extra.rst
    content/extlinks.rst
    
