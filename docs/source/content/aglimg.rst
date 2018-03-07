@@ -126,12 +126,12 @@ Once SSHed, kill the existing roverapp:
 	   
 	   killall roverapp
 
-Start the new roverapp, type:
+Start the new roverapp (this is only for running pre-built executable), type:
 
 	.. code-block:: bash
 	   :linenos:
 	   
-	   /projects/rover-app/build/bin/roverapp
+	   /home/mozcelikors/qtCreatorWorkspace/roverapp/build/bin/roverapp
 
    
 Go to your web browser and find the Rover Telemetry UI at ``http://<your host address>:5055/rovertelemetryui.html``.
