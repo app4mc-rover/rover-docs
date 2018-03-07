@@ -34,11 +34,26 @@ On your local machine, to download dependencies (If you don't have node.js insta
    sudo npm install net connect serve-static http socket.io express path mqtt
 
 
+	   
+
+
+Running Steps
+==============================================================
+
+
+On your local machine, to run the Rover Telemetry UI server:
+
+.. code-block:: javascript
+   :linenos:   
+   
+	   cd scripts/
+	   sudo node start_rovertelemetryui.js
+
 Now, configure rover.conf on your local machine and copy it to the rover:
 
 	.. code-block:: bash
 	   :linenos:
-	   
+	   cd ~
 	   wget 'https://raw.githubusercontent.com/app4mc-rover/rover-app/0.1.1/samples/rover.conf.sample'
 	   mv rover.conf.sample rover.conf
 	   nano rover.conf
@@ -86,29 +101,18 @@ If you are planning to redirect messages from Eclipse Hono, change ``USE_REDIREC
 
 Now, copy the configured rover.conf to the rover. For this you'll need to boot your rover with the recently flashed SD card.
 
-SSH into your rover by using (fill in the <rover-ip-address> ):
-
-	.. code-block:: bash
-	   :linenos:
-	   
-	   ssh root@<rover-ip-address>
-
-If you dont know the rover's IP address you can either use Nmap on Linux (i.e. sudo nmap -sn 192.168.1.0/24), or Advanced IP Scanner on Windows.
-
-Once SSHed, you can copy the configuration file from your PC (fill in the <rover-ip-address>):
+Copy the configuration file from your PC (fill in the <rover-ip-address>):
 
 	.. code-block:: bash
 	   :linenos:
 	   
 	   sudo apt-get install rsync
 	   rsync -r rover.conf root@<rover-ip-address>:/etc/rover.conf
-	   
 
-
-Running Steps
-==============================================================
 
 (If you didn't already) SSH into your rover by using (fill in the <rover-ip-address> ):
+
+If you dont know the rover's IP address you can either use Nmap on Linux (i.e. sudo nmap -sn 192.168.1.0/24), or Advanced IP Scanner on Windows.
 
 	.. code-block:: bash
 	   :linenos:
@@ -129,15 +133,8 @@ Start the new roverapp, type:
 	   
 	   /projects/rover-app/build/bin/roverapp
 
-On your local machine, to run the Rover Telemetry UI server:
-
-.. code-block:: javascript
-   :linenos:   
    
-	   cd scripts/
-	   sudo node start_rovertelemetryui.js
-   
-Go to your web browser and find the page at ``http://<your host address>:5055/rovertelemetryui.html``.
+Go to your web browser and find the Rover Telemetry UI at ``http://<your host address>:5055/rovertelemetryui.html``.
 
 
 Killing Roverapp
