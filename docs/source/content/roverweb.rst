@@ -9,8 +9,8 @@ Rover Web UI: roverweb
    :width: 40%
    :align: center
    :alt: ../roverstatic/images/roverweb_logo.png
-   
-   
+
+
 *************************************************
 What is roverweb?
 *************************************************
@@ -28,7 +28,7 @@ Roverweb's communication infrastructure is given below:
    :width: 100%
    :align: center
    :alt: ../roverstatic/images/roverweb_infra.png
-   
+
 *************************************************
 roverweb Features
 *************************************************
@@ -51,7 +51,8 @@ Installation
 =================================================
 .. note:: In order to see how roverapp is installed and compiled, please see :ref:`roverweb Installation <roverwebinstallation>` section.
 
-.. _roverwebstart: 
+.. _roverwebstart:
+
 Running the Application
 =================================================
 Before running the application, make sure that installation steps are successfully completed.
@@ -62,14 +63,14 @@ In order to run the server after installation, the following command must be exe
 
    cd <your/roverweb/root/path>/scripts/nodejs/
    sudo node start_roverweb.js
-   
+
 .. warning:: Be sure to change the folder to ``cd <your/roverweb/root/path>/scripts/nodejs/`` before executing the script, since it'll use default directory for hosting.
 
 After reading from the console that HTTP server is running, the web interface could be accessed using ``http://192.168.168.1:5500/roverweb.html``.
-Before the web interface can be opened, it is important for one to connect to the network (using SSID/PSK) of the rover. 
+Before the web interface can be opened, it is important for one to connect to the network (using SSID/PSK) of the rover.
 
 For roverweb's operation, it is not necessary for roverapp to be running. However, full functions of roverweb could be benefited when roverapp is also running.
-   
+
 Starting the Camera Stream
 =================================================
 After ``mjpg_streamer`` is installed, one can start the camera stream in roverweb using the following command:
@@ -79,9 +80,9 @@ After ``mjpg_streamer`` is installed, one can start the camera stream in roverwe
 
    cd <your/roverweb/root/path>/
    sudo bash scripts/bash/camera_stream/start_camera_stream.sh
-   
+
 .. warning:: Be sure that the ``start_camera_stream.sh`` is given execution permissions. This is achieved by ``sudo chmod +x scripts/bash/camera_stream/start_camera_stream.sh``.
-   
+
 *************************************************
 roverweb Complete Reference
 *************************************************
@@ -124,7 +125,7 @@ Example data are shown below for each of the given data format types:
 
 * Sensor Data
 	Data is periodically sent from roverapp to roverweb.
-	
+
 	.. code-block:: python
 	   :linenos:
 
@@ -132,21 +133,21 @@ Example data are shown below for each of the given data format types:
 			"rover_dtype"   : "sensor",
 			"data" :
 			{
-				"infrared0"   : 100.0, 
-				"infrared1"   : 100.0, 
-				"infrared2"   : 100.0, 
-				"infrared3"   : 100.0, 
-				"front"       : 20, 
-				"rear"        : 15, 
-				"temperature" : 22.0, 
-				"humidity"    : 67.0, 
+				"infrared0"   : 100.0,
+				"infrared1"   : 100.0,
+				"infrared2"   : 100.0,
+				"infrared3"   : 100.0,
+				"front"       : 20,
+				"rear"        : 15,
+				"temperature" : 22.0,
+				"humidity"    : 67.0,
 				"bearing"     : 47.0
 			}
 		}\r\n
-		
+
 * Utilization Data
 	Data is periodically sent from roverapp to roverweb.
-	
+
 	.. code-block:: python
 	   :linenos:
 
@@ -154,16 +155,16 @@ Example data are shown below for each of the given data format types:
 			"rover_dtype"   : "util",
 			"data" :
 			{
-				"core0"   : 100.0, 
-				"core1"   : 100.0, 
-				"core2"   : 100.0, 
-				"core3"   : 100.0, 
+				"core0"   : 100.0,
+				"core1"   : 100.0,
+				"core2"   : 100.0,
+				"core3"   : 100.0,
 			}
 		}\r\n
-		
+
 * **Control Data**
 	Data is asynchronously (upon user events) sent from roverweb to roverapp.
-	
+
 	.. code-block:: python
 	   :linenos:
 
@@ -171,10 +172,10 @@ Example data are shown below for each of the given data format types:
 			"rover_dtype"   : "control",
 			"data" :
 			{
-				"command"   : "F",  
+				"command"   : "F",
 			}
 		}\r\n
-		
+
 	``command`` entry can indicate many integrated functions, such as the ones listed below:
 
 	* P → Parking Mode Left
@@ -195,10 +196,10 @@ Example data are shown below for each of the given data format types:
 	* D → Go Backward-Right
 	* J → Turn Left On Spot
 	* K → Turn Right On Spot
-		
+
 * Speed Data
 	Data is asynchronously (upon user events) sent from roverweb to roverapp.
-	
+
 	.. code-block:: python
 	   :linenos:
 
@@ -206,6 +207,6 @@ Example data are shown below for each of the given data format types:
 			"rover_dtype"   : "speed",
 			"data" :
 			{
-				"speed"   : 360, 
+				"speed"   : 360,
 			}
 		}\r\n

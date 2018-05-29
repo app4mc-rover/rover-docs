@@ -19,9 +19,9 @@ Download `Raspbian Jessie Image <https://owncloud.idial.institute/s/gLp5ZAd7SKz3
 
 	* Includes dependencies and current rover-app, rover-telemetry-ui, and rover-web repositories
 	* Image Updated: 10.01.2017
-	
+
 To install the latest roverapp
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
    :linenos:
@@ -39,7 +39,7 @@ To start roverapp
 
    cd ~/rover-app/build/bin
    sudo ./roverapp
-   
+
 Using rover-telemetry-ui
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -49,27 +49,27 @@ To download:
 
 .. code-block:: javascript
    :linenos:
-   
+
    git clone https://github.com/app4mc-rover/rover-telemetry-ui.git
-   
+
 To download dependencies (If you don't have node.js installed, first install node.js):
 
 .. code-block:: javascript
    :linenos:
-   
+
    cd rover-telemetry-ui
    sudo npm install net connect serve-static http socket.io express path mqtt
 
 To run the server:
 
 .. code-block:: javascript
-   :linenos:   
-   
+   :linenos:
+
    cd scripts/
    sudo node start_rovertelemetryui.js
-   
+
 Finally, go to your web browser and find the page at ``http://<your host address>:5055/rovertelemetryui.html``.
-   
+
 To download latest roverweb
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -81,7 +81,7 @@ To download latest roverweb
    git checkout master
    cd rover-web
    sudo npm install net connect serve-static http socket.io express path mqtt
-   
+
 To start roverweb
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -90,5 +90,5 @@ To start roverweb
 
    cd ~/rover-web/scripts/nodejs
    sudo node start_roverweb.js
-   
+
 .. warning:: Be sure to change the folder to ``cd <your/roverweb/root/path>/scripts/nodejs/`` before executing the script, since it'll use default directory for hosting.

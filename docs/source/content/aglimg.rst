@@ -7,9 +7,9 @@ Starting with AGL Image - Quick Start (for Rover 0.1.0)
 Downloading the Image
 ==============================================================
 
-Download the 0.1.0 Image from `this link <https://owncloud.idial.institute/s/rZ1ULqVhX9CHjrl?path=%2F>`_.
+Download the 0.1.0 Image from `0.1.0 img link <https://owncloud.idial.institute/s/rZ1ULqVhX9CHjrl?path=%2F>`_.
 
-Download Etcher from `this link <https://etcher.io/>`_ and flash the image to the SD card.
+Download Etcher from `etcher link <https://etcher.io/>`_ and flash the image to the SD card.
 
 Configuration Steps (One Time Only per Local Computer)
 ==============================================================
@@ -168,7 +168,7 @@ If previously deployed, type the following to run the backup version:
 
 .. note::
 
-	If you dont have a backup version 0.1.1 pre-built executable, you can download the build directory from `this link <https://owncloud.idial.institute/s/wodPfDmgtRv47Gk>`_.
+	If you dont have a backup version 0.1.1 pre-built executable, you can download the build directory from `roverapp link <https://owncloud.idial.institute/s/wodPfDmgtRv47Gk>`_.
 	After downloading, this executable should be copied exactly at ``/home/mozcelikors/qtCreatorWorkspace/roverapp/build/`` in AGL image.
 	This is a workaround for those who would like to only test with the rover and not develop on it.
 

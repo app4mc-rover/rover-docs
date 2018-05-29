@@ -23,7 +23,7 @@ In some Raspbian releases, bluetooth is pre-installed. In order to check if blue
 
    hcitool scan
    service bluetooth status
-   
+
 In case the first command does not return with errors, that means that the bluetooth connection in Raspberry Pi is now available for use.
 The second command is used for checking if the bluetooth is active.
 If the first command results in an error, you can start the bluetooth service with the following commands:
@@ -33,50 +33,50 @@ If the first command results in an error, you can start the bluetooth service wi
 
    sudo apt-get install pi-bluetooth bluez bluez-tools blueman
    sudo systemctl start bluetooth
-   
+
 .. warning:: **Use the following commands at your own RISK!!!**
-   
+
    For older Raspbian Jessie distributions, there is a known issue of bluetooth not working properly. If you have such a problem, you can upgrade the
    distro version and use a specific kernel version which is working with bluetooth device. Following commands should be executed in order to do so:
-   
+
    .. code-block:: bash
       :linenos:
-      
+
       sudo apt-get update
       sudo apt-get dist-upgrade
       sudo rm /etc/udev/rules.d/99-com.rules
       sudo apt-get -o Dpkg::Options::="--force-confmiss" install --reinstall raspberrypi-sys-mods
-	  
+
    If command above does not work, try the next one:
-   
+
    .. code-block:: bash
       :linenos:
-	  
+
       sudo apt-get install raspberrypi-sys-mods
 
    Press ``Y`` to install the mods. Then do a kernel downgrade to version 4.4.50:
-   
+
    .. code-block:: bash
       :linenos:
-	  
+
       sudo systemctl reboot
       sudo rpi-update 52241088c1da59a359110d39c1875cda56496764
-	  
+
    As a final step, you should add ``btuart`` to your ``/etc/rc.local`` and reboot your Raspberry Pi.
-   
+
    .. code-block:: bash
       :linenos:
-	  
+
       sudo reboot
-	  
+
    After reboot, you can test if bluetooth is working:
-   
+
    .. code-block:: bash
       :linenos:
 
       hcitool scan
       service bluetooth status
-	  
+
 
 Enabling I2C
 =================================================
@@ -92,12 +92,13 @@ Access point setup is explained here: `Access Point Setup <https://frillip.com/u
 
 (Please use ``192.168.168.1`` IP address for the rover.)
 
-.. _roverappinstallation: 
+.. _roverappinstallation:
+
 *************************************************
 roverapp Installation
 *************************************************
 
-Installation procedure is tested with Raspberry Pi 3 / Raspbian Jessie and Raspbian Sketch. In case of any problems, please report to one of the project maintainers: 
+Installation procedure is tested with Raspberry Pi 3 / Raspbian Jessie and Raspbian Sketch. In case of any problems, please report to one of the project maintainers:
 
 * Mustafa Özcelikörs <mozcelikors@gmail.com>
 * Robert Höttger <robert.hoettger@fh-dortmund.de>
@@ -151,7 +152,7 @@ Raspberry Pi 3 comes with Python 2.7 installed. For other Linux distributions, i
 
    sudo apt-get install python
 
-   
+
 Installing psutil
 --------------------------------------------------
 
@@ -163,19 +164,19 @@ First, ``python-pip`` must be installed:
 
    sudo apt-get install python-pip
    pip install psutil
-   
+
 If you already have psutil installed, you can upgrade it:
 
 .. code-block:: bash
    :linenos:
 
    pip install psutil --upgrade
-   
-   
+
+
 Installing other build-time dependencies
 --------------------------------------------------
 
-Raspberry Pi 3 comes with gcc installed. 
+Raspberry Pi 3 comes with gcc installed.
 
 .. code-block:: bash
    :linenos:
@@ -186,12 +187,12 @@ Installing run-time dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Installing OpenCV
 --------------------------------------------------
-OpenCV installation is explained in `this link <https://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html>`_.
+OpenCV installation is explained in `OpenCV link <https://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html>`_.
 
 
 Installing wiringPi
 --------------------------------------------------
-Installation of wiringPi is explained in `this link <http://wiringpi.com/download-and-install/>`_.
+Installation of wiringPi is explained in `wiringPi link <http://wiringpi.com/download-and-install/>`_.
 
 
 
@@ -202,7 +203,7 @@ Installing bluetooth
 
    sudo apt-get update
    sudo apt-get install bluez pi-bluetooth bluez-tools blueman libbluetooth-dev
-   
+
 Installing jsoncpp
 --------------------------------------------------
 .. code-block:: bash
@@ -220,7 +221,7 @@ Installing jsoncpp
 Installing raspicam
 --------------------------------------------------
 
-Installation of raspicam is explained in `this link <https://github.com/6by9/raspicam-0.1.3>`_.
+Installation of raspicam is explained in `raspicam link <https://github.com/6by9/raspicam-0.1.3>`_.
 
 To install raspicam, execute the following commands:
 
@@ -235,7 +236,7 @@ To install raspicam, execute the following commands:
    cmake ..
    make
    sudo make install
-   
+
 .. note:: As an alternative you can use the following git repository: `raspicam 0.1.2 <https://github.com/cedricve/raspicam.git>`_.
 
 .. warning:: If compilation using ``make`` command fails, one should make sure ``libmmal.so`` and ``libmmal_core.so`` is located in ``/opt/vc/lib``. To install these libraries, one can do a Raspberry Pi firmware update: ``sudo rpi-update``.
@@ -270,7 +271,7 @@ As an example, the following customly created CMakeLists.txt file eases the proc
 
 	cmake_minimum_required (VERSION 2.8.11)
 	project (roverapp)
-	
+
 	# To find modules from other cmake-built projects that are searched with find_package,
 	# external cmake modules need to be provided. Those are typically named as Find<package>.cmake or <package>Config.cmake.
 	# Those must be added to the CMAKE_MODULE_PATH set below:
@@ -344,7 +345,7 @@ As an example, the following customly created CMakeLists.txt file eases the proc
 
 	#Add main executable
 	add_executable(roverapp ${CMAKE_SOURCE_DIR}/src/roverapp.cpp)
-	
+
 	#
 	#  LINKING TO ROVER API
 	#
@@ -449,31 +450,31 @@ To install roverapp, the following command should be executed:
    cmake ..
    make
    sudo make install
-   
-.. note:: 
+
+.. note::
 
    If the installation process complains about not being able to find ``FindOpenCV.cmake`` or ``OpenCVConfig.cmake``, or any ``.cmake`` file for that matter, the file must be searched and exported to the environment with commands such as the following. Then building should be done such as the following:
-	
+
    .. code-block:: bash
-	  
+
       sudo find / -name *OpenCVConfig.cmake*
       cd build
       sudo OpenCV_DIR=<path/to/OpenCVConfig.cmake> cmake ..
       make
       sudo make install
-	  
-	  
+
+
    Same goes with ``raspicam``:
-   
+
    .. code-block:: bash
-	  
+
       sudo find / -name *raspicamConfig.cmake*
       cd build
       sudo OpenCV_DIR=<path/to/raspicamConfig.cmake> cmake ..
       make
       sudo make install
 
-   
+
 If desired, the automatic installation script can be used:
 
 .. code-block:: bash
@@ -482,22 +483,23 @@ If desired, the automatic installation script can be used:
    git clone https://github.com/app4mc-rover/rover-app.git
    cd rover-app
    sudo ./install_roverapp.sh
-   
+
 After installation, roverapp can be run by the following command:
 
 .. code-block:: bash
    :linenos:
 
    sudo ./roverapp
-   
+
 .. warning:: Use the following if raspicam complains about not being able to find cmake file:
 
    .. code-block:: bash
-   
+
       sudo raspicam_DIR=/home/pi/raspicam-0.1.3/build/ ./install_roverapp.sh
 
-   
-.. _roverwebinstallation: 
+
+.. _roverwebinstallation:
+
 *************************************************
 roverweb Installation
 *************************************************
@@ -532,7 +534,7 @@ The following are must-have build-time dependencies that are partially required 
 
    sudo apt-get update
    sudo apt-get install git-core
-   
+
 Installing curl
 --------------------------------------------------
 
@@ -540,14 +542,14 @@ Installing curl
    :linenos:
 
    sudo apt-get install curl
-   
+
 
 Installing run-time dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Installing node.js and its required modules
 --------------------------------------------------
 
-For roverweb to serve web-pages and handle communications, node.js is an important dependency. 
+For roverweb to serve web-pages and handle communications, node.js is an important dependency.
 The following commands can be used to download and install node.js:
 
 .. code-block:: bash
@@ -563,27 +565,27 @@ At this point, if the following command does not result in any errors, that mean
    :linenos:
 
    node -v
-   
+
 There are also node.js modules which are required for roverweb. Those modules must be installed by running the following:
 
 .. code-block:: bash
    :linenos:
 
    sudo npm install net connect serve-static http socket.io express path mqtt
-   
-.. warning:: In case of problems while running roverweb, do this step after navigation to project directory. 
-  
+
+.. warning:: In case of problems while running roverweb, do this step after navigation to project directory.
+
 Installing mjpg-streamer-experimental
 --------------------------------------------------
-One particular mjpg-streamer version provides streaming with Raspberry Pi. 
+One particular mjpg-streamer version provides streaming with Raspberry Pi.
 
 In order to install the module, execute the following commands:
 
 .. code-block:: bash
    :linenos:
- 
+
    sudo apt-get install cmake libjpeg8-dev
-   
+
    git clone https://github.com/jacksonliam/mjpg-streamer.git
 
    cd mjpg-streamer-experimental
@@ -604,6 +606,5 @@ Downloading (Fetching) roverweb
    :linenos:
 
    git clone https://github.com/app4mc-rover/rover-web.git
-   
+
 After roverweb is installed, there is no need to install it to any static location. You can continue by running the server: :ref:`roverweb Getting started <roverwebstart>`
-   
