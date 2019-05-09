@@ -93,6 +93,10 @@ Enable SPI
 Manual Installation Instructions
 =================================
 
+.. note::
+
+   We are working on providing a Docker image to automate the installation process
+
 Installing Roverapp dependencies
 ---------------------------------
 
@@ -396,10 +400,10 @@ The following are the run-time used for the roverweb:
 * curl
 
 Manual Installation Instructions
-####################################
+================================
 
 Installing Roverweb dependencies
-*************************************************
+--------------------------------
 
 Installing curl
 ^^^^^^^^^^^^^^^^
@@ -463,7 +467,7 @@ In order to install the module, execute the following commands:
 
 
 Installing Roverweb
-*************************************************
+---------------------
 
 Downloading (Fetching) Roverweb
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,7 +1,7 @@
 .. toctree::
    :glob:
 
-Rover Software: Roverapp
+Roverapp
 #########################
 
 .. image:: ../roverstatic/images/roverapp_logo.png
