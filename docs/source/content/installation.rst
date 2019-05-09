@@ -1,6 +1,8 @@
 .. toctree::
    :glob:
 
+.. _roverappinstallation:
+
 Installation Instructions
 ##########################
 

@@ -14,7 +14,7 @@ Rover In-vehicle Applications
 
 Useful Links
 =============
-
+* `Python Script for Simulating a Cloud Application <https://github.com/app4mc-rover/rover-utility/blob/master/Cloud/scripts/pyamqp.py>`_
 
 Marker Detection
 =================
@@ -30,7 +30,7 @@ Useful Links
 * `Eclipse Hono Command & Control API Example <https://github.com/eclipse/hono/blob/master/example/src/main/java/org/eclipse/hono/vertx/example/base/HonoExampleApplicationBase.java>`_
 * `Rover Telemetry UI Backend <https://github.com/app4mc-rover/rover-telemetry-ui-cc-be>`_
 * `Rover Telemetry UI Frontend <https://github.com/app4mc-rover/rover-telemetry-ui-cc-fe>`_
-* `Python Script for Simulating a Device <../roverstatic/scripts/pymqtt.py>`_
+* `Python Script for Simulating a Device <https://github.com/app4mc-rover/rover-utility/blob/master/Cloud/scripts/pymqtt.py>`_
 
 Command & Control via Rover Telemetry UI
 ==========================================
@@ -38,6 +38,12 @@ Command & Control via Rover Telemetry UI
 In the following sections, we'll use Eclipse Hono to send a Command & Control message from a business application in the Cloud to the Rover.
 
 The example is based on the Rover Telemetry UI Backend, which takes the user input from the Rover Telemetry UI Frontend and then sends Command & Control message to the according Rover.
+
+.. image:: ../roverstatic/images/rover_command_control.png
+   :width: 100%
+   :align: center
+   :alt: ../roverstatic/images/rover_command_control.png
+
 
 Connect to Eclipse Hono
 -------------------------

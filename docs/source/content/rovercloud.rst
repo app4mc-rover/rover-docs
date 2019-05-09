@@ -24,10 +24,10 @@ The following classes are used in the Roverapp to realize the Cloud communicatio
 * `RoverPahoMQTT <https://github.com/app4mc-rover/rover-app/blob/master/src/roverapi/rover_pahomqtt.cpp>`_:  Functions to use rover as a client and to publish/subscribe based on Eclipse Paho
 * `RoverMQTTCommand <https://github.com/app4mc-rover/rover-app/blob/master/src/roverapi/rover_mqttcommand.cpp>`_: Rover-specific topic subscription and publishing
 
-.. image:: ../roverstatic/images/cloudinfra1.png
+.. image:: ../roverstatic/images/rover-cloud.png
    :width: 100%
    :align: center
-   :alt: ../roverstatic/images/cloudinfra1.png
+   :alt: ../roverstatic/images/roverapp_infra.png
 
 Sending Telemetry Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

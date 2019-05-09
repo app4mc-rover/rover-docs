@@ -34,7 +34,7 @@ For multi-threading, POSIX threads (Pthreads) and its synchronization implementa
 * Implementations for bluetooth-based driving from Android phones.
 
 *************************************************
-Architecture
+Roverapp Architecture
 *************************************************
 .. image:: ../roverstatic/images/roverapp_infra.png
    :width: 100%
