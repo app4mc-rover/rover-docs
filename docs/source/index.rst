@@ -13,18 +13,14 @@ APP4MC-Rover Documentation
    :glob:
 
    content/intro.rst
+   content/installation.rst
    content/roverhw.rst
    content/roverapp.rst
-   content/roverapi.rst
+   content/rovercloud.rst
    content/roverweb.rst
-   content/rovertelemetry.rst
-   content/installation.rst
+   content/tutorial.rst
    content/cross.rst
-   content/yocto.rst
-   content/images.rst
-   content/aglimg.rst
-   content/extra.rst
-   content/extlinks.rst
+   content/references.rst
    
 Indices and tables
 ==================

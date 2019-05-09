@@ -4,20 +4,17 @@
 Rover Hardware
 #########################
 
-*************************************************
-Complete Rover Hardware Requirements
-*************************************************
-An illustration of how components look and how they're located in rover is given below:
+An illustration regarding the different Rover components and where they are located in the Rover is given below:
 
 .. image:: ../roverstatic/images/rovercomponents.png
    :width: 100%
    :align: center
    :alt: ../roverstatic/images/rovercomponents.png
-   
+
 .. note:: The complete list of materials to construct a rover is given in `APP4MC Rover Wiki <https://wiki.eclipse.org/APP4MC/Rover>`_.
 
 *************************************************
-About Motor Driver Layer
+Motor Driver Layer
 *************************************************
 In order to drive the motors of the DFRobot rover chassis, `Pololu MC33926 Motor Driver for Raspberry Pi <https://www.pololu.com/product/2755/resources>`_ is used as a shield on top of Raspberry Pi 3.
 
@@ -35,17 +32,16 @@ For convenience in applications, following resources might be helpful (taken fro
    :alt: ../roverstatic/images/motorshield.jpg
 
 *************************************************
-About RoverSenseLayer Revision 2
+RoverSenseLayer Revision 2
 *************************************************
 
 .. image:: ../roverstatic/images/roversenselayer.png
    :width: 80%
    :align: center
    :alt: ../roverstatic/images/roversenselayer.png
-   
-RoverSenseLayer Features
-===========================
-**RoverSenseLayer Revision 2** is a customly made circuit board that is designed as a shield on top of Pololu MC33926 Motor Driver.
+
+
+**RoverSenseLayer Revision 2** is a custom made circuit board that is designed as a shield on top of Pololu MC33926 Motor Driver.
 RoverSenseLayer Revision 2 provides interfaces for OLED display, sensors, buttons, analog to digital converter, voltage converters, and more.
 
 Complete list of interfaces are given below:
@@ -74,21 +70,15 @@ RoverSenseLayer Revision 2 design properties are as follows for production:
 * (Preferrably) Red solder Mask
 * (Preferrably) White silkscreen
 
-RoverSenseLayer Schematics
-===========================
-.. note:: Schematics can be found in the following git repository: 
-
+.. note:: Schematics can be found in the following git repository:
           `https://github.com/app4mc-rover/rover-sense-layer-rev2 <https://github.com/app4mc-rover/rover-sense-layer-rev2>`_
 
-RoverSenseLayer Source Files 
-=============================
-.. note:: KiCad design files can be found in the following git repository: 
-
+.. note:: KiCad design files can be found in the following git repository:
           `https://github.com/app4mc-rover/rover-sense-layer-rev2 <https://github.com/app4mc-rover/rover-sense-layer-rev2>`_
-		  
-		  
+
+
 *************************************************
-Hardware Setup Guide
+Hardware Setup
 *************************************************
 
 The following image depicts the corresponding software to hardware mapping of proximity sensors and how they should be connected to RoverSenseLayer.
@@ -97,11 +87,10 @@ The following image depicts the corresponding software to hardware mapping of pr
    :width: 100%
    :align: center
    :alt: ../roverstatic/images/roverconn.png
-   
+
 The following shows the pins used by the current roverapp software (the reference image from https://de.pinout.xyz/pinout/):
 
 .. image:: ../roverstatic/images/rover_used_pins.png
    :width: 100%
    :align: center
    :alt: ../roverstatic/images/rover_used_pins.png
-
