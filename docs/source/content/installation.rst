@@ -377,6 +377,51 @@ Same goes with ``raspicam``:
       sudo make install
 
 
+.. _rovermarkerinstallation:
+
+*************************************************
+Marker Detection
+*************************************************
+
+This shows how to calibrate the marker detection for the Rover based on OpenCV
+
+* Theory behind: https://docs.opencv.org/3.1.0/d4/d94/tutorial_camera_calibration.html
+* Why Charuco and not Aruco: https://docs.opencv.org/3.1.0/df/d4a/tutorial_charuco_detection.html
+
+
+Calibration of the picam in raspbian
+======================================
+
+* Go to ``/home/pi/opencv_contrib-3.4.1/modules/aruco/samples`` and create a Charuco board
+
+.. code-block:: bash
+    :linenos:
+
+    $ g++ $(pkg-config --libs --cflags opencv) -o create create_board_charuco.cpp
+     $ ./create -d=10 -h=10 --ml=100 --sl=150 -w=7 --si=true image.jpg
+
+.. note::
+
+More information about create via ``$ ./create -h``
+
+* Print the generated image and put it on some hard surface
+
+* Measure with a ruler the dimensions of the black squares and markers. We will need it as an input when calibrating the camera.
+
+* To calibrate the camera, we need a file with detector parameters, called ``detector_params.yaml``. This file is usually in the same folder as the other source files given by openCV contributions.
+
+* Compile and run the calibration program:
+
+.. code-block:: bash
+    :linenos:
+
+    $ g++ $(pkg-config --libs --cflags opencv) -o calibrate calibrate_camera_charuco.cpp
+    $ ./calibrate -d=10 --dp=detector_params.yml -h=10 --ml=0.018 --sl=0.027 -w=7 --sc=true calibration.txt
+
+.. note::
+
+    More information about create via ``$ ./calibrate -h``
+
 
 .. _roverwebinstallation:
 

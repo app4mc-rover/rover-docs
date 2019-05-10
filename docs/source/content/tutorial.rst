@@ -19,6 +19,52 @@ Useful Links
 Marker Detection
 =================
 
+Marker detection is gaining great importance in various domains such as robot navigation, augmented reality, etc.
+The process behind is based on finding correspondences between points in the real environment and their 2d image projection.
+
+* Pose estimation tutorial: https://docs.opencv.org/3.1.0/d5/dae/tutorial_aruco_detection.html
+
+Requirements
+--------------
+
+* OpenCV version 3.4.1 as explained :ref:`here <roverappinstallation>`
+* Calibrated Raspbian camera as explained :ref:`here <rovermarkerinstallation>`
+
+
+Running Marker Detection
+------------------------
+
+The Roverapp contains both a marker chaser application and a pose estimation application.
+To start them, just do the following:
+
+.. code-block:: bash
+    :linenos:
+
+     $ cd ~/temp/rover-app/build
+      sudo modprobe bcm2835-v4l2
+
+Then, you can either start
+
+.. code-block:: bash
+    :linenos:
+
+      $ ./bin/MarkerChaser
+
+or
+
+.. code-block:: bash
+    :linenos:
+
+      $ ./bin/poseEstimation
+
+
+Potential Use Cases
+----------------------
+
+* Marker chaser: Move the rover such that the marker is always in the middle.
+* Platooning: Create a platoon by following other Rovers with a marker on it.
+
+
 *******************************
 Rover Cloud Applications
 *******************************
