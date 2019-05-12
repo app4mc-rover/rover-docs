@@ -15,6 +15,21 @@ Rover In-vehicle Applications
 Useful Links
 =============
 * `Python Script for Simulating a Cloud Application <https://github.com/app4mc-rover/rover-utility/blob/master/Cloud/scripts/pyamqp.py>`_
+* `rover-api Documentation <Link to rover-api documentation https://app4mc-rover.github.io/rover-app/>`_
+
+Developing Rover Applications
+===================================
+`This <https://github.com/app4mc-rover/rover-example-app>`_ repository features an example and instructions on how to develop, cross compile, and dockerize applications that use the rover-api.
+It utilizes an ARM docker image that
+
+* can be run in x86
+* contains rover-api and all of its dependencies
+* contains a simple IDE
+* can be used as base image to dockerize your in-vehicle applications
+
+For more details, please consult the README of the repository.
+All the steps explained there are tested on Ubuntu 16.04.
+
 
 Marker Detection
 =================
