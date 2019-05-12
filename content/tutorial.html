@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7. Rover Tutorials &mdash; Rover r0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8. Cross Development in Raspbian" href="cross.html" />
+    <link rel="prev" title="6. Rover Web UI: roverweb" href="roverweb.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Rover
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. Installation Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roverhw.html">3. Rover Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roverapp.html">4. Roverapp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rovercloud.html">5. Cloud Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roverweb.html">6. Rover Web UI: roverweb</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Rover Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rover-in-vehicle-applications">7.1. Rover In-vehicle Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#useful-links">7.1.1. Useful Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#developing-rover-applications">7.1.2. Developing Rover Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#marker-detection">7.1.3. Marker Detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#requirements">7.1.3.1. Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-marker-detection">7.1.3.2. Running Marker Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#potential-use-cases">7.1.3.3. Potential Use Cases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rover-cloud-applications">7.2. Rover Cloud Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">7.2.1. Useful Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-control-via-rover-telemetry-ui">7.2.2. Command &amp; Control via Rover Telemetry UI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#connect-to-eclipse-hono">7.2.2.1. Connect to Eclipse Hono</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sending-command-control-messages">7.2.2.2. Sending Command &amp; Control Messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-your-application">7.2.2.3. Testing your application</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cross.html">8. Cross Development in Raspbian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">9. References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Rover</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>7. Rover Tutorials</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/content/tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound">
+</div>
+<div class="section" id="rover-tutorials">
+<span id="rovertutorial"></span><h1>7. Rover Tutorials<a class="headerlink" href="#rover-tutorials" title="Permalink to this headline">¶</a></h1>
+<p>This page features tutorials regarding the development of Rover applications (Marker Detection) as well as the integration with Cloud applications, e. g. for sending driving commands to the Rover.</p>
+<div class="section" id="rover-in-vehicle-applications">
+<h2>7.1. Rover In-vehicle Applications<a class="headerlink" href="#rover-in-vehicle-applications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="useful-links">
+<h3>7.1.1. Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/app4mc-rover/rover-utility/blob/master/Cloud/scripts/pyamqp.py">Python Script for Simulating a Cloud Application</a></p></li>
+<li><p><a class="reference external" href="Linktorover-apidocumentationhttps://app4mc-rover.github.io/rover-app/">rover-api Documentation</a></p></li>
+</ul>
+</div>
+<div class="section" id="developing-rover-applications">
+<h3>7.1.2. Developing Rover Applications<a class="headerlink" href="#developing-rover-applications" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/app4mc-rover/rover-example-app">This</a> repository features an example and instructions on how to develop, cross compile, and dockerize applications that use the rover-api.
+It utilizes an ARM docker image that</p>
+<ul class="simple">
+<li><p>can be run in x86</p></li>
+<li><p>contains rover-api and all of its dependencies</p></li>
+<li><p>contains a simple IDE</p></li>
+<li><p>can be used as base image to dockerize your in-vehicle applications</p></li>
+</ul>
+<p>For more details, please consult the README of the repository.
+All the steps explained there are tested on Ubuntu 16.04.</p>
+</div>
+<div class="section" id="marker-detection">
+<h3>7.1.3. Marker Detection<a class="headerlink" href="#marker-detection" title="Permalink to this headline">¶</a></h3>
+<p>Marker detection is gaining great importance in various domains such as robot navigation, augmented reality, etc.
+The process behind is based on finding correspondences between points in the real environment and their 2d image projection.</p>
+<ul class="simple">
+<li><p>Pose estimation tutorial: <a class="reference external" href="https://docs.opencv.org/3.1.0/d5/dae/tutorial_aruco_detection.html">https://docs.opencv.org/3.1.0/d5/dae/tutorial_aruco_detection.html</a></p></li>
+</ul>
+<div class="section" id="requirements">
+<h4>7.1.3.1. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>OpenCV version 3.4.1 as explained <a class="reference internal" href="installation.html#roverappinstallation"><span class="std std-ref">here</span></a></p></li>
+<li><p>Calibrated Raspbian camera as explained <a class="reference internal" href="installation.html#rovermarkerinstallation"><span class="std std-ref">here</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="running-marker-detection">
+<h4>7.1.3.2. Running Marker Detection<a class="headerlink" href="#running-marker-detection" title="Permalink to this headline">¶</a></h4>
+<p>The Roverapp contains both a marker chaser application and a pose estimation application.
+To start them, just do the following:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ <span class="nb">cd</span> ~/temp/rover-app/build
+  sudo modprobe bcm2835-v4l2
+</pre></div>
+</td></tr></table></div>
+<p>Then, you can either start</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  $ ./bin/MarkerChaser
+</pre></div>
+</td></tr></table></div>
+<p>or</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  $ ./bin/poseEstimation
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="potential-use-cases">
+<h4>7.1.3.3. Potential Use Cases<a class="headerlink" href="#potential-use-cases" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Marker chaser: Move the rover such that the marker is always in the middle.</p></li>
+<li><p>Platooning: Create a platoon by following other Rovers with a marker on it.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="rover-cloud-applications">
+<h2>7.2. Rover Cloud Applications<a class="headerlink" href="#rover-cloud-applications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>7.2.1. Useful Links<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.eclipse.org/hono/api/command-and-control-api/">Eclipse Hono Command &amp; Control API</a></p></li>
+<li><p><a class="reference external" href="https://github.com/eclipse/hono/blob/master/example/src/main/java/org/eclipse/hono/vertx/example/base/HonoExampleApplicationBase.java">Eclipse Hono Command &amp; Control API Example</a></p></li>
+<li><p><a class="reference external" href="https://github.com/app4mc-rover/rover-telemetry-ui-cc-be">Rover Telemetry UI Backend</a></p></li>
+<li><p><a class="reference external" href="https://github.com/app4mc-rover/rover-telemetry-ui-cc-fe">Rover Telemetry UI Frontend</a></p></li>
+<li><p><a class="reference external" href="https://github.com/app4mc-rover/rover-utility/blob/master/Cloud/scripts/pymqtt.py">Python Script for Simulating a Device</a></p></li>
+</ul>
+</div>
+<div class="section" id="command-control-via-rover-telemetry-ui">
+<h3>7.2.2. Command &amp; Control via Rover Telemetry UI<a class="headerlink" href="#command-control-via-rover-telemetry-ui" title="Permalink to this headline">¶</a></h3>
+<p>In the following sections, we’ll use Eclipse Hono to send a Command &amp; Control message from a business application in the Cloud to the Rover.</p>
+<p>The example is based on the Rover Telemetry UI Backend, which takes the user input from the Rover Telemetry UI Frontend and then sends Command &amp; Control message to the according Rover.</p>
+<a class="reference internal image-reference" href="../_images/rover_command_control.png"><img alt="../roverstatic/images/rover_command_control.png" class="align-center" src="../_images/rover_command_control.png" style="width: 100%;" /></a>
+<div class="section" id="connect-to-eclipse-hono">
+<h4>7.2.2.1. Connect to Eclipse Hono<a class="headerlink" href="#connect-to-eclipse-hono" title="Permalink to this headline">¶</a></h4>
+<p>At first, our application needs to connect to Hono via AMQP as shown in <a class="reference external" href="https://github.com/app4mc-rover/rover-telemetry-ui-cc-be/blob/master/src/main/java/com/appstacle/telemetryui/util/HonoConnector.java">HonoConnector.java</a>.
+To do so, we need to provide the according connection details and credentials.
+For the Rover Telemetry UI Backend, this can be done within the <a class="reference external" href="https://github.com/app4mc-rover/rover-telemetry-ui-cc-be/blob/master/src/main/resources/application.properties">application.properties</a></p>
+</div>
+<div class="section" id="sending-command-control-messages">
+<h4>7.2.2.2. Sending Command &amp; Control Messages<a class="headerlink" href="#sending-command-control-messages" title="Permalink to this headline">¶</a></h4>
+<p>The next step would then to actual send the <span class="xref std std-ref">driving commands</span> to the Rover as shown in the <code class="docutils literal notranslate"><span class="pre">sendCommand()</span></code> method in <a class="reference external" href="https://github.com/app4mc-rover/rover-telemetry-ui-cc-be/blob/master/src/main/java/com/appstacle/telemetryui/service/CommandControlService.java">CommandControlService.java</a>.
+Basically, Hono receives the Command &amp; Control message and take care that message, regardless of the used protocol, are sent to the right device (based on the <code class="docutils literal notranslate"><span class="pre">deviceID</span></code>).
+In this example, messages are sent to the Rover via Hono’s MQTT adapter.</p>
+</div>
+<div class="section" id="testing-your-application">
+<h4>7.2.2.3. Testing your application<a class="headerlink" href="#testing-your-application" title="Permalink to this headline">¶</a></h4>
+<p>For testing that driving commands arrives at the device, the above mentioned python script can be used.
+When setting the according credentials, the script connects to the MQTT adapter of Eclipse Hono instance.
+As soon as a Cloud application send a Command &amp; Control message to the device, the according driving command is printed in the console:</p>
+<a class="reference internal image-reference" href="../_images/device_mqtt_example.jpg"><img alt="../roverstatic/images/device_mqtt_example.jpg" class="align-center" src="../_images/device_mqtt_example.jpg" style="width: 90%;" /></a>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cross.html" class="btn btn-neutral float-right" title="8. Cross Development in Raspbian" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="roverweb.html" class="btn btn-neutral float-left" title="6. Rover Web UI: roverweb" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Fachhochschule Dortmund - IDiAL
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

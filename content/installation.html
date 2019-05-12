@@ -1,0 +1,707 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Installation Instructions &mdash; Rover r0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Rover Hardware" href="roverhw.html" />
+    <link rel="prev" title="1. Introduction" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Rover
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Installation Instructions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#raspbian-image">2.1. Raspbian Image</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">2.1.1. Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preparing-the-raspbian-image">2.1.2. Preparing the Raspbian Image</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-i2c-ssh-and-spi">2.1.2.1. Configuring I2C, SSH and SPI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#manual-installation-instructions">2.1.3. Manual Installation Instructions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installing-roverapp-dependencies">2.1.3.1. Installing Roverapp dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-roverapp">2.1.3.2. Installing Roverapp</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-roverapp">2.1.4. Running Roverapp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#marker-detection">2.2. Marker Detection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#calibration-of-the-picam-in-raspbian">2.2.1. Calibration of the picam in raspbian</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#roverweb-installation">2.3. Roverweb Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.3.1. Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.3.2. Manual Installation Instructions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installing-roverweb-dependencies">2.3.2.1. Installing Roverweb dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-roverweb">2.3.2.2. Installing Roverweb</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roverhw.html">3. Rover Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roverapp.html">4. Roverapp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rovercloud.html">5. Cloud Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roverweb.html">6. Rover Web UI: roverweb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">7. Rover Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cross.html">8. Cross Development in Raspbian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">9. References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Rover</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>2. Installation Instructions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/content/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound">
+</div>
+<div class="section" id="installation-instructions">
+<span id="roverappinstallation"></span><h1>2. Installation Instructions<a class="headerlink" href="#installation-instructions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="raspbian-image">
+<h2>2.1. Raspbian Image<a class="headerlink" href="#raspbian-image" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial will teach your how to set up a Rover-specific Raspbian image from scratch and the basic workflow to run the Roverapp applications.</p>
+<div class="section" id="requirements">
+<h3>2.1.1. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<p>The following are the build-time dependencies required for the Roverapp:</p>
+<ul class="simple">
+<li><p>build-essential</p></li>
+<li><p>cmake</p></li>
+<li><p>git-core</p></li>
+<li><p>python-pip Python package installer</p></li>
+<li><p>Python 2.7</p></li>
+<li><p>gcc</p></li>
+</ul>
+<p>The following are the run-time dependencies used for the Roverapp:</p>
+<ul class="simple">
+<li><p>Raspbian or similar distro that uses the Raspberry Pi metadata (meta-raspberrypi)</p></li>
+<li><p>Access Point setup (with IP 192.168.168.1)</p></li>
+<li><p>Python 2.7</p></li>
+<li><p>psutil Python module</p></li>
+<li><p>wiringPi library</p></li>
+<li><p>raspicam-0.1.2 or raspicam-0.1.3 library</p></li>
+<li><p>OpenCV 3.2.0 library</p></li>
+<li><p>Json-Cpp library</p></li>
+<li><p>bluetooth-dev, bluez, pi-bluetooth libraries</p></li>
+<li><p>bcm2835 library</p></li>
+<li><p>(modified) Adafruit_GFX and Adafruit_SSD1306 libraries</p></li>
+<li><p>paho.mqtt.c libraries</p></li>
+</ul>
+</div>
+<div class="section" id="preparing-the-raspbian-image">
+<h3>2.1.2. Preparing the Raspbian Image<a class="headerlink" href="#preparing-the-raspbian-image" title="Permalink to this headline">¶</a></h3>
+<p>First, you need to download a fresh Raspbian Stretch image (desktop and recommended software) from <a class="reference external" href="https://www.raspberrypi.org/downloads/raspbian/">here</a>.
+Then you have to write the image to your SD card, for example via <a class="reference external" href="https://www.balena.io/etcher/">Etcher</a>.
+Once you wrote successfully your Raspbian image on your SD card, insert it into the Raspberry Pi.</p>
+<div class="section" id="configuring-i2c-ssh-and-spi">
+<h4>2.1.2.1. Configuring I2C, SSH and SPI<a class="headerlink" href="#configuring-i2c-ssh-and-spi" title="Permalink to this headline">¶</a></h4>
+<p>After your fresh installation you will need to configure the Raspberry Pi in order to run rover-app applications.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do NOT update your Raspbian image as this will take a lot of time.</p>
+</div>
+<div class="section" id="enable-i2c">
+<h5>2.1.2.1.1. Enable I2C<a class="headerlink" href="#enable-i2c" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>Open a terminal window</p></li>
+<li><p>Run sudo raspi-config</p></li>
+<li><p>Use the down arrow to select 5 Interfacing Options</p></li>
+<li><p>Arrow down to P2 i2c</p></li>
+<li><p>Select yes when it asks you to enable SSH</p></li>
+<li><p>Use the right arrow to select the &lt;Finish&gt; button.</p></li>
+<li><p>Select yes when it asks to reboot.</p></li>
+</ul>
+<p>If everything went well, the Pi should respond with <cite>/dev/i2c-1</cite> when you run <cite>ls /dev/*i2c*</cite></p>
+</div>
+<div class="section" id="enable-ssh">
+<h5>2.1.2.1.2. Enable SSH<a class="headerlink" href="#enable-ssh" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>Open a terminal window</p></li>
+<li><p>Run raspi-config</p></li>
+<li><p>Use the down arrow to select 5 Interfacing Options</p></li>
+<li><p>Arrow down to P2 ssh</p></li>
+<li><p>Select yes when it asks you to enable SSH</p></li>
+<li><p>Use the right arrow to select the &lt;Finish&gt; button.</p></li>
+<li><p>Select yes when it asks to reboot.</p></li>
+</ul>
+<p>If everything went well, you should be able to connect to the RPI3 through ssh from other computer.</p>
+</div>
+<div class="section" id="enable-spi">
+<h5>2.1.2.1.3. Enable SPI<a class="headerlink" href="#enable-spi" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>Open a terminal window</p></li>
+<li><p>Run raspi-config</p></li>
+<li><p>Use the down arrow to select 5 Interfacing Options</p></li>
+<li><p>Arrow down to P4 spi</p></li>
+<li><p>Select yes when it asks you to enable SPI</p></li>
+<li><p>Use the right arrow to select the &lt;Finish&gt; button</p></li>
+<li><p>Reboot your RPI3</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="manual-installation-instructions">
+<h3>2.1.3. Manual Installation Instructions<a class="headerlink" href="#manual-installation-instructions" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are working on providing a Docker image to automate the installation process</p>
+</div>
+<div class="section" id="installing-roverapp-dependencies">
+<h4>2.1.3.1. Installing Roverapp dependencies<a class="headerlink" href="#installing-roverapp-dependencies" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="install-cmake">
+<h5>2.1.3.1.1. Install CMake<a class="headerlink" href="#install-cmake" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo apt-get install cmake
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="install-wiring-pi">
+<h5>2.1.3.1.2. Install wiring pi<a class="headerlink" href="#install-wiring-pi" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  $ <span class="nb">cd</span> ~/  <span class="o">&amp;&amp;</span> <span class="se">\</span>
+     git clone git://git.drogon.net/wiringPi <span class="o">&amp;&amp;</span> <span class="se">\</span>
+     <span class="nb">cd</span> wiringPi/ <span class="o">&amp;&amp;</span>  <span class="se">\</span>
+     git pull origin <span class="o">&amp;&amp;</span> <span class="se">\</span>
+     ./build
+</pre></div>
+</td></tr></table></div>
+<p>More installation information for wiringPi are available <a class="reference external" href="http://wiringpi.com/download-and-install/">here</a>.</p>
+</div>
+<div class="section" id="install-jsoncpp">
+<h5>2.1.3.1.3. Install jsoncpp<a class="headerlink" href="#install-jsoncpp" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo apt-get -y install libjsoncpp-dev <span class="o">&amp;&amp;</span> <span class="se">\</span>
+   sudo ln -s /usr/include/jsoncpp/json/ /usr/include/json
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="install-openssl">
+<h5>2.1.3.1.4. Install Openssl<a class="headerlink" href="#install-openssl" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo apt-get -y install libssl-dev
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="install-paho-mqtt-c">
+<h5>2.1.3.1.5. Install paho.mqtt.c<a class="headerlink" href="#install-paho-mqtt-c" title="Permalink to this headline">¶</a></h5>
+<p>To install paho.mqtt.c libraries for MQTT-based cloud communication, execute the following commands:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/ <span class="o">&amp;&amp;</span> <span class="se">\</span>
+   git clone https://github.com/eclipse/paho.mqtt.c.git <span class="o">&amp;&amp;</span> <span class="se">\</span>
+   <span class="nb">cd</span> paho.mqtt.c/ <span class="o">&amp;&amp;</span> <span class="se">\</span>
+   make <span class="o">&amp;&amp;</span> <span class="se">\</span>
+   sudo make install
+</pre></div>
+</td></tr></table></div>
+<p>If this makes problems, just try the following:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ pip install paho-mqtt
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="install-i2c-tools">
+<h5>2.1.3.1.6. Install i2c tools<a class="headerlink" href="#install-i2c-tools" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="install-psutil">
+<h5>2.1.3.1.7. Install psutil<a class="headerlink" href="#install-psutil" title="Permalink to this headline">¶</a></h5>
+<p>psutil is a performance tool library that is written in Python and that is able to provide information about GNU/Linux-based systems.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo pip install psutil
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="install-bluetooth">
+<h5>2.1.3.1.8. Install bluetooth<a class="headerlink" href="#install-bluetooth" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo apt-get install -y bluez <span class="se">\</span>
+   libbluetooth-dev
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="install-raspicam">
+<h5>2.1.3.1.9. Install raspicam<a class="headerlink" href="#install-raspicam" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/ <span class="o">&amp;&amp;</span> <span class="se">\</span>
+   git clone https://github.com/6by9/raspicam-0.1.3.git <span class="o">&amp;&amp;</span> <span class="se">\</span>
+   <span class="nb">cd</span> raspicam-0.1.3 <span class="o">&amp;&amp;</span> <span class="se">\</span>
+   mkdir -p build <span class="o">&amp;&amp;</span> <span class="se">\</span>
+   <span class="nb">cd</span> build <span class="o">&amp;&amp;</span> <span class="se">\</span>
+   cmake .. <span class="o">&amp;&amp;</span><span class="se">\</span>
+   make <span class="o">&amp;&amp;</span><span class="se">\</span>
+   sudo make install
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As an alternative you can use the following git repository: <a class="reference external" href="https://github.com/cedricve/raspicam.git">raspicam 0.1.2</a>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If compilation using <code class="docutils literal notranslate"><span class="pre">make</span></code> command fails, one should make sure <code class="docutils literal notranslate"><span class="pre">libmmal.so</span></code> and <code class="docutils literal notranslate"><span class="pre">libmmal_core.so</span></code> is located in <code class="docutils literal notranslate"><span class="pre">/opt/vc/lib</span></code>.
+To install these libraries, one can do a Raspberry Pi firmware update: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">rpi-update</span></code>.</p>
+</div>
+</div>
+<div class="section" id="install-opencv">
+<h5>2.1.3.1.10. Install OpenCV<a class="headerlink" href="#install-opencv" title="Permalink to this headline">¶</a></h5>
+<p>This installation follows the steps described <a class="reference external" href="https://www.pyimagesearch.com/2015/10/26/how-to-install-opencv-3-on-raspbian-jessie/">here</a></p>
+<p>Dependencies</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo apt-get install -y libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+ $ sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+ $ sudo apt-get install -y libxvidcore-dev libx264-dev
+ $ sudo apt-get install -y libgtk2.0-dev
+ $ sudo apt-get install libatlas-base-dev gfortran
+</pre></div>
+</td></tr></table></div>
+<p>Getting OpenCV</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ <span class="nb">cd</span> ~
+  $ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.4.1.zip
+  $ unzip opencv.zip
+</pre></div>
+</td></tr></table></div>
+<p>Getting opencv contrib</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  $ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.4.1.zip
+   $ unzip opencv_contrib.zip
+</pre></div>
+</td></tr></table></div>
+<p>Compiling OpenCV</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ <span class="nb">cd</span> ~/opencv-3.4.1/
+   $ mkdir build
+   $ <span class="nb">cd</span> build
+   $ cmake -D <span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>RELEASE <span class="se">\</span>
+         -D <span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span>/usr/local <span class="se">\</span>
+         -D <span class="nv">INSTALL_C_EXAMPLES</span><span class="o">=</span>ON <span class="se">\</span>
+         -D <span class="nv">INSTALL_PYTHON_EXAMPLES</span><span class="o">=</span>ON <span class="se">\</span>
+         -D <span class="nv">OPENCV_EXTRA_MODULES_PATH</span><span class="o">=</span>~/opencv_contrib-3.4.1/modules <span class="se">\</span>
+         -D <span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON ..
+</pre></div>
+</td></tr></table></div>
+<p>Check if you have any errors.
+Otherwise we can compile OpenCV.
+This step will take some hours from 2 up to 5-6, depending on the size of your SD card and the speed.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ make -j4
+</pre></div>
+</td></tr></table></div>
+<p>Once you are done, let’s install OpenCV:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ sudo make install
+  $ sudo ldconfig
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="installing-roverapp">
+<h4>2.1.3.2. Installing Roverapp<a class="headerlink" href="#installing-roverapp" title="Permalink to this headline">¶</a></h4>
+<p>After the prerequisite are fulfilled, the Roverapp can be installed.
+Roverapp’s installation process is simplified by using <code class="docutils literal notranslate"><span class="pre">CMake</span></code> tool, a semi-automated Makefile generator for GCC compiler.
+Therefore, the Roverapp contains a <a class="reference external" href="https://github.com/app4mc-rover/rover-app/blob/master/CMakeLists.txt">CMakeLists.txt</a>  file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When adding and linking new libraries, objects, source files, or headers, the CMake file must be tailored accordingly.</p>
+</div>
+<div class="section" id="compiling">
+<h5>2.1.3.2.1. Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~
+ $ git clone https://github.com/phil-hei/rover-app.git
+ $ <span class="nb">cd</span> rover-app/
+ $ ./make_roverapp.sh
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="configuring-cloud-connection">
+<h5>2.1.3.2.2. Configuring Cloud connection<a class="headerlink" href="#configuring-cloud-connection" title="Permalink to this headline">¶</a></h5>
+<p>In order to connect to the Hono or any other MQTT-supporting message gateway, the Rover needs to be configured with the according details such as Broker address and credentials.
+A template configuration file, called <cite>rover.conf.sample</cite>, is given in the directory <cite>samples</cite>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> samples/
+</pre></div>
+</td></tr></table></div>
+<p>Modify that file with the required values, namely the following attributes:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Configuration file for roverapp.</span>
+ <span class="nv">ROVER_IDENTITY_C</span><span class="o">=</span>INSERT
+ <span class="nv">MQTT_BROKER_C</span><span class="o">=</span>INSERT
+ <span class="nv">MQTT_BROKER_PORT_C</span><span class="o">=</span><span class="m">1883</span>
+ <span class="nv">ROVER_MQTT_QOS_C</span><span class="o">=</span><span class="m">0</span>
+ <span class="nv">MQTT_USERNAME_C</span><span class="o">=</span>INSERT
+ <span class="nv">MQTT_PASSWORD_C</span><span class="o">=</span>INSERT
+ <span class="nv">USE_GROOVE_SENSOR_C</span><span class="o">=</span><span class="m">0</span>
+ <span class="nv">USE_REDIRECTED_TOPICS_C</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</td></tr></table></div>
+<p>Then you need to copy the file to right location:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo cp rover.conf.sample /etc/rover.conf
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="running-roverapp">
+<h3>2.1.4. Running Roverapp<a class="headerlink" href="#running-roverapp" title="Permalink to this headline">¶</a></h3>
+<p>The Roverapp is located in the <cite>build/bin</cite> directory along with other scripts for testing Rover’s functionalities.
+When started, the Roverapp connects to the Cloud and continously sends telemetry data as well as listen for incoming command messages.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> build/bin
+ $ sudo ./roverapp
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the installation process complains about not being able to find <code class="docutils literal notranslate"><span class="pre">FindOpenCV.cmake</span></code> or <code class="docutils literal notranslate"><span class="pre">OpenCVConfig.cmake</span></code>, or any <code class="docutils literal notranslate"><span class="pre">.cmake</span></code> file.
+For that matter, the file must be searched and exported to the environment with commands as following:</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo find / -name *OpenCVConfig.cmake*
+<span class="nb">cd</span> build
+sudo <span class="nv">OpenCV_DIR</span><span class="o">=</span>&lt;path/to/OpenCVConfig.cmake&gt; cmake ..
+make
+sudo make install
+</pre></div>
+</div>
+<p>Same goes with <code class="docutils literal notranslate"><span class="pre">raspicam</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo find / -name *raspicamConfig.cmake*
+<span class="nb">cd</span> build
+sudo <span class="nv">OpenCV_DIR</span><span class="o">=</span>&lt;path/to/raspicamConfig.cmake&gt; cmake ..
+make
+sudo make install
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="marker-detection">
+<span id="rovermarkerinstallation"></span><h2>2.2. Marker Detection<a class="headerlink" href="#marker-detection" title="Permalink to this headline">¶</a></h2>
+<p>This shows how to calibrate the marker detection for the Rover based on OpenCV</p>
+<ul class="simple">
+<li><p>Theory behind: <a class="reference external" href="https://docs.opencv.org/3.1.0/d4/d94/tutorial_camera_calibration.html">https://docs.opencv.org/3.1.0/d4/d94/tutorial_camera_calibration.html</a></p></li>
+<li><p>Why Charuco and not Aruco: <a class="reference external" href="https://docs.opencv.org/3.1.0/df/d4a/tutorial_charuco_detection.html">https://docs.opencv.org/3.1.0/df/d4a/tutorial_charuco_detection.html</a></p></li>
+</ul>
+<div class="section" id="calibration-of-the-picam-in-raspbian">
+<h3>2.2.1. Calibration of the picam in raspbian<a class="headerlink" href="#calibration-of-the-picam-in-raspbian" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">/home/pi/opencv_contrib-3.4.1/modules/aruco/samples</span></code> and create a Charuco board</p></li>
+</ul>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ g++ <span class="k">$(</span>pkg-config --libs --cflags opencv<span class="k">)</span> -o create create_board_charuco.cpp
+ $ ./create -d<span class="o">=</span><span class="m">10</span> -h<span class="o">=</span><span class="m">10</span> --ml<span class="o">=</span><span class="m">100</span> --sl<span class="o">=</span><span class="m">150</span> -w<span class="o">=</span><span class="m">7</span> --si<span class="o">=</span><span class="nb">true</span> image.jpg
+</pre></div>
+</td></tr></table></div>
+<p>More information about create via <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">./create</span> <span class="pre">-h</span></code></p>
+<ul class="simple">
+<li><p>Print the generated image and put it on some hard surface</p></li>
+<li><p>Measure with a ruler the dimensions of the black squares and markers. We will need it as an input when calibrating the camera.</p></li>
+<li><p>To calibrate the camera, we need a file with detector parameters, called <code class="docutils literal notranslate"><span class="pre">detector_params.yaml</span></code>. This file is usually in the same folder as the other source files given by openCV contributions.</p></li>
+<li><p>Compile and run the calibration program:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ g++ <span class="k">$(</span>pkg-config --libs --cflags opencv<span class="k">)</span> -o calibrate calibrate_camera_charuco.cpp
+$ ./calibrate -d<span class="o">=</span><span class="m">10</span> --dp<span class="o">=</span>detector_params.yml -h<span class="o">=</span><span class="m">10</span> --ml<span class="o">=</span><span class="m">0</span>.018 --sl<span class="o">=</span><span class="m">0</span>.027 -w<span class="o">=</span><span class="m">7</span> --sc<span class="o">=</span><span class="nb">true</span> calibration.txt
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>More information about create via <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">./calibrate</span> <span class="pre">-h</span></code></p>
+</div>
+</div>
+</div>
+<div class="section" id="roverweb-installation">
+<span id="roverwebinstallation"></span><h2>2.3. Roverweb Installation<a class="headerlink" href="#roverweb-installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>2.3.1. Requirements<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>The following are the build-time dependencies required for the roverweb:</p>
+<ul class="simple">
+<li><p>git-core</p></li>
+</ul>
+<p>The following are the run-time used for the roverweb:</p>
+<ul class="simple">
+<li><p>Raspbian or similar distro that uses the Raspberry Pi metadata (meta-raspberrypi)</p></li>
+<li><p>Access Point setup (with IP 192.168.168.1)</p></li>
+<li><p>node.js with version 8.x or higher</p></li>
+<li><p>node.js modules: net, connect, server-static, http, socket.io, express, path, mqtt</p></li>
+<li><p>mjpg-streamer-experimental</p></li>
+<li><p>curl</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>2.3.2. Manual Installation Instructions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="installing-roverweb-dependencies">
+<h4>2.3.2.1. Installing Roverweb dependencies<a class="headerlink" href="#installing-roverweb-dependencies" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="installing-curl">
+<h5>2.3.2.1.1. Installing curl<a class="headerlink" href="#installing-curl" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>sudo apt-get install curl
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="installing-node-js-and-its-required-modules">
+<h5>2.3.2.1.2. Installing node.js and its required modules<a class="headerlink" href="#installing-node-js-and-its-required-modules" title="Permalink to this headline">¶</a></h5>
+<p>To serve web-pages and handle communications, node.js is an important dependency for Roverweb.
+The following commands can be used to download and install node.js:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo apt-get update
+ $ curl -sL https://deb.nodesource.com/setup_8.x <span class="p">|</span> sudo -E bash -
+ $ sudo apt install nodejs
+</pre></div>
+</td></tr></table></div>
+<p>Check if node.js is successfully installed:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ node -v
+</pre></div>
+</td></tr></table></div>
+<p>There are additional node.js modules which are required for roverweb.
+Those modules must be installed by running the following:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo npm install net connect serve-static http socket.io express path mqtt
+</pre></div>
+</td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In case of problems while running roverweb, do this step after navigation to project directory.</p>
+</div>
+</div>
+<div class="section" id="installing-mjpg-streamer-experimental">
+<h5>2.3.2.1.3. Installing mjpg-streamer-experimental<a class="headerlink" href="#installing-mjpg-streamer-experimental" title="Permalink to this headline">¶</a></h5>
+<p>One particular mjpg-streamer version provides streaming with Raspberry Pi.
+In order to install the module, execute the following commands:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo apt-get install cmake libjpeg8-dev
+ $ git clone https://github.com/jacksonliam/mjpg-streamer.git
+ $ <span class="nb">cd</span> mjpg-streamer-experimental
+ $ mkdir build
+ $ <span class="nb">cd</span> build
+ $ cmake ..
+ $ make
+ $ sudo make install
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="installing-roverweb">
+<h4>2.3.2.2. Installing Roverweb<a class="headerlink" href="#installing-roverweb" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="downloading-fetching-roverweb">
+<h5>2.3.2.2.1. Downloading (Fetching) Roverweb<a class="headerlink" href="#downloading-fetching-roverweb" title="Permalink to this headline">¶</a></h5>
+<p>After roverweb is installed, there is no need to install it to any static location.
+You can continue by running the server: <a class="reference internal" href="roverweb.html#roverwebstart"><span class="std std-ref">roverweb Getting started</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="roverhw.html" class="btn btn-neutral float-right" title="3. Rover Hardware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral float-left" title="1. Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Fachhochschule Dortmund - IDiAL
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

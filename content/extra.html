@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Additional Features &mdash; Rover r0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Rover
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. Installation Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roverhw.html">3. Rover Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roverapp.html">4. Roverapp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rovercloud.html">5. Cloud Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roverweb.html">6. Rover Web UI: roverweb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">7. Rover Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cross.html">8. Cross Development in Raspbian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">9. References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Rover</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Additional Features</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/content/extra.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound">
+</div>
+<div class="section" id="additional-features">
+<h1>Additional Features<a class="headerlink" href="#additional-features" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tracing-with-rover">
+<h2>Tracing with Rover<a class="headerlink" href="#tracing-with-rover" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference download internal" download="" href="../_downloads/5e09a4b0ca313c6803392da676c74081/RoverTracing.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Rover</span> <span class="pre">Tracing</span> <span class="pre">Manual</span></code></a>.</p>
+</div>
+<div class="section" id="a-short-tutorial-on-mqtt">
+<h2>A Short Tutorial on MQTT<a class="headerlink" href="#a-short-tutorial-on-mqtt" title="Permalink to this headline">¶</a></h2>
+<p>Installing MQTT-Broker (A server that is able to host topics, and MQTT v3.1 protocol):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install mosquitto
+</pre></div>
+</div>
+<p>Installing MQTT-Client implementations for subscription and publishing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install mosquitto-clients
+</pre></div>
+</div>
+<p>Starting the MQTT-Broker:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mosquitto -p <span class="m">1883</span>
+</pre></div>
+</div>
+<p>Subscribing to a topic:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mosquitto_sub -v -t <span class="s1">&#39;rover/RoverDriving/control/1&#39;</span>
+</pre></div>
+</div>
+<p>Publishing to a topic:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mosquitto_pub  -t <span class="s1">&#39;rover/RoverDriving/control/1&#39;</span> -m <span class="s1">&#39;my message&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Fachhochschule Dortmund - IDiAL
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
